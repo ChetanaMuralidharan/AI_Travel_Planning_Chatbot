@@ -33,8 +33,9 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
 
-    allow_origins=["http://localhost:3000",  # For local development
-        "https://ai-travel-planning-chatbot.vercel.app"],  # Updated to match frontend port
+    #allow_origins=["http://localhost:3000",  # For local development
+    #   "https://ai-travel-planning-chatbot.vercel.app"],  # Updated to match frontend port
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
