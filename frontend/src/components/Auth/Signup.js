@@ -28,7 +28,9 @@ const Signup = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:8000/api/signup', {
+            const API_BASE = process.env.REACT_APP_API_URL;
+            const response = await fetch(`${API_BASE}/signup`, {
+
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
