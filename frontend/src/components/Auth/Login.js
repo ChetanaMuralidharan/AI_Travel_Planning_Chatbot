@@ -21,7 +21,7 @@ const Login = () => {
         e.preventDefault();
         try {
             //const API_BASE = process.env.REACT_APP_API_URL;
-            const API_BASE = "https://ai-travel-assistant.onrender.com";
+            const API_BASE = "https://ai-travel-assistant.onrender.com/api";
             const response = await fetch(`${API_BASE}/login`, {
                 method: 'POST',
                 headers: {
