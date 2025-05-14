@@ -55,7 +55,9 @@ const ChatWindow = () => {
   const fetchChatHistory = async (token) => {
     try {
       setIsHistoryLoading(true);
-      const response = await fetch(`http://localhost:8000/api/chat-history?token=${token}`);
+      //const response = await fetch(`http://localhost:8000/api/chat-history?token=${token}`);
+      const API_BASE = process.env.REACT_APP_API_URL;
+      const response = await fetch(`${API_BASE}/chat-history?token=${token}`);
 
       if (!response.ok) {
         throw new Error('Failed to load chat history');
@@ -161,8 +163,10 @@ const ChatWindow = () => {
 
     try {
       // Get token from localStorage
+      const API_BASE = process.env.REACT_APP_API_URL;
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/api/chat', {
+      //const response = await fetch('http://localhost:8000/api/chat', {
+      const response = await fetch(`${API_BASE}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
